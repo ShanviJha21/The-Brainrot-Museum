@@ -1,0 +1,1158 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+/* ==============================
+   GLOBAL STYLING
+================================ */
+
+:root {
+  --black: #090909;
+  --dark: #10100e;
+  --dark-card: #151512;
+  --gold: #c6a45c;
+  --gold-light: #e3c783;
+  --gold-muted: #8c7545;
+  --cream: #eee8dc;
+  --grey: #99958c;
+  --border: rgba(198, 164, 92, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: 5px;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.museum {
+  min-height: 100vh;
+  background: var(--black);
+}
+
+/* ==============================
+   NAVIGATION BAR
+================================ */
+
+.navbar {
+  height: 85px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: rgba(9, 9, 9, 0.96);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--cream);
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  color: var(--grey);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.nav-links button:hover {
+  color: var(--gold-light);
+}
+
+.menu-toggle {
+  display: none;
+  color: var(--gold);
+  background: none;
+  border: none;
+  font-size: 25px;
+}
+
+/* ==============================
+   HERO SECTION
+================================ */
+
+.hero {
+  min-height: 790px;
+  padding: 35px 8% 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 75% 48%,
+      rgba(139, 105, 43, 0.13),
+      transparent 48%
+    ),
+    linear-gradient(110deg, #090909, #11100c, #090909);
+}
+
+/* Decorative golden circle */
+
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 470px;
+  height: 470px;
+  border: 1px solid rgba(198, 164, 92, 0.19);
+  border-radius: 50%;
+  right: 8%;
+  top: 20%;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgba(198, 164, 92, 0.12);
+  border-radius: 50%;
+  right: 12%;
+  top: 28%;
+  pointer-events: none;
+}
+
+.hero-top,
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  color: var(--gold-muted);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  max-width: 780px;
+  position: relative;
+  z-index: 3;
+  animation: fadeUp 1s ease;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(75px, 11vw, 145px);
+  line-height: 0.78;
+  font-weight: 500;
+  letter-spacing: -5px;
+  color: var(--cream);
+  margin-bottom: 35px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-description {
+  color: #aaa49a;
+  max-width: 450px;
+  line-height: 1.9;
+  font-size: 13px;
+  margin-bottom: 35px;
+}
+
+/* ==============================
+   GOLD BUTTON
+================================ */
+
+.gold-button {
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: #0b0b09;
+  padding: 17px 25px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  transition: 0.35s ease;
+}
+
+.gold-button span {
+  margin-left: 25px;
+}
+
+.gold-button:hover {
+  background: transparent;
+  color: var(--gold-light);
+  transform: translateY(-3px);
+}
+
+/* ==============================
+   INTRODUCTION
+================================ */
+
+.intro-section {
+  padding: 125px 20px;
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+}
+
+.intro-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(45px, 7vw, 85px);
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.intro-section h2 i {
+  color: var(--gold);
+}
+
+.intro-section > p:last-child {
+  max-width: 480px;
+  margin: auto;
+  color: var(--grey);
+  font-size: 13px;
+  line-height: 2;
+}
+
+/* ==============================
+   FEATURED COLLECTIONS
+================================ */
+
+.featured-section,
+.collection-page {
+  padding: 90px 8%;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+
+.section-heading h2,
+.exhibit-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.section-heading > button {
+  color: var(--gold);
+  background: none;
+  border: none;
+  font-size: 10px;
+  letter-spacing: 2px;
+  padding-bottom: 8px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* ==============================
+   CATEGORY CARDS
+================================ */
+
+.category-card {
+  min-height: 300px;
+  padding: 25px;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(198, 164, 92, 0.09),
+      transparent 45%
+    ),
+    var(--dark-card);
+  border: 1px solid var(--border);
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.category-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-8px);
+  background-color: #1c1a14;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-top,
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-top {
+  color: var(--gold-muted);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.card-top span:last-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  color: var(--gold);
+}
+
+.card-content h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 43px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.card-content p {
+  color: var(--grey);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.card-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 17px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--gold);
+}
+
+/* ==============================
+   COLLECTION PAGE
+================================ */
+
+.collection-page {
+  min-height: 80vh;
+  padding-top: 100px;
+}
+
+.page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 9vw, 100px);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.page-title i {
+  color: var(--gold);
+}
+
+.page-description {
+  max-width: 470px;
+  color: var(--grey);
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 60px;
+}
+
+/* ==============================
+   CATEGORY DETAIL PAGE
+================================ */
+
+.detail-page {
+  padding: 90px 10%;
+  min-height: 80vh;
+}
+
+.back-button {
+  color: var(--gold);
+  background: none;
+  border: none;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 65px;
+}
+
+.detail-hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0 60px;
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-icon {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gold-muted);
+  border-radius: 50%;
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 65px;
+  flex-shrink: 0;
+}
+
+.detail-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(55px, 9vw, 100px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.detail-hero p {
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 15px;
+}
+
+.detail-description {
+  padding: 65px 0;
+  max-width: 650px;
+}
+
+.detail-description > p:last-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  color: #c1baad;
+  line-height: 1.6;
+}
+
+.exhibit-section {
+  padding: 35px 0 65px;
+}
+
+.exhibit-section h2 {
+  margin-bottom: 35px;
+}
+
+.exhibit {
+  padding: 28px 10px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 50px 1fr 30px;
+  align-items: center;
+  gap: 20px;
+  transition: 0.3s;
+}
+
+.exhibit:hover {
+  background: rgba(198, 164, 92, 0.05);
+  padding-left: 20px;
+}
+
+.exhibit > span {
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.exhibit h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.exhibit p {
+  color: var(--grey);
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+/* ==============================
+   QUIZ BANNER
+================================ */
+
+.quiz-banner {
+  margin: 70px 8%;
+  padding: 85px 30px;
+  text-align: center;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(198, 164, 92, 0.12),
+      transparent 70%
+    ),
+    #11100d;
+}
+
+.quiz-banner h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(45px, 7vw, 75px);
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.quiz-banner h2 i {
+  color: var(--gold);
+}
+
+.quiz-banner > p:not(.eyebrow) {
+  color: var(--grey);
+  max-width: 450px;
+  margin: 0 auto 30px;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* ==============================
+   QUIZ PAGE
+================================ */
+
+.quiz-page {
+  min-height: 750px;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(198, 164, 92, 0.08),
+      transparent 65%
+    );
+}
+
+.quiz-page > h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(55px, 8vw, 90px);
+  font-weight: 400;
+  line-height: 0.95;
+  margin-bottom: 50px;
+}
+
+.quiz-page > h1 i {
+  color: var(--gold);
+}
+
+.quiz-card,
+.result-card {
+  width: 100%;
+  max-width: 650px;
+  padding: 45px;
+  border: 1px solid var(--border);
+  background: var(--dark-card);
+  text-align: left;
+}
+
+.quiz-progress {
+  display: flex;
+  justify-content: space-between;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 3px;
+  background: #333;
+  margin: 20px 0 40px;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: var(--gold);
+  transition: width 0.4s ease;
+}
+
+.quiz-card h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.answer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answer-list button {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 18px;
+  color: var(--cream);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.answer-list button:hover {
+  background: rgba(198, 164, 92, 0.1);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.answer-list button span {
+  color: var(--gold);
+}
+
+.result-card {
+  text-align: center;
+}
+
+.result-symbol {
+  display: block;
+  font-size: 65px;
+  color: var(--gold);
+  margin: 25px 0;
+}
+
+.result-card h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 55px;
+  font-weight: 400;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.result-card > p:not(.eyebrow) {
+  color: var(--grey);
+  font-size: 13px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.restart-button {
+  display: block;
+  margin: 25px auto 0;
+  color: var(--gold);
+  background: none;
+  border: none;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+/* ==============================
+   FOOTER
+================================ */
+
+.footer {
+  padding: 65px 8% 25px;
+  background: #070707;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+
+.footer > p {
+  color: var(--grey);
+  font-size: 11px;
+  margin: 15px 0 55px;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--gold-muted);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.footer-bottom button {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+/* ==============================
+   ANIMATIONS
+================================ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 900px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    min-height: 700px;
+  }
+
+  .hero::before {
+    right: -15%;
+  }
+
+  .hero::after {
+    right: -10%;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: 70px;
+    padding: 0 6%;
+  }
+
+  .logo {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    background: #11100d;
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hero {
+    min-height: 650px;
+    padding: 25px 7%;
+  }
+
+  .hero-top,
+  .hero-bottom {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .hero-top span:last-child,
+  .hero-bottom span:nth-child(2) {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(65px, 17vw, 95px);
+    letter-spacing: -3px;
+  }
+
+  .hero::before {
+    width: 300px;
+    height: 300px;
+    right: -35%;
+    top: 30%;
+  }
+
+  .hero::after {
+    width: 220px;
+    height: 220px;
+    right: -20%;
+    top: 36%;
+  }
+
+  .intro-section {
+    padding: 85px 25px;
+  }
+
+  .featured-section,
+  .collection-page {
+    padding: 65px 6%;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .section-heading h2 {
+    font-size: 40px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    min-height: 260px;
+  }
+
+  .detail-page {
+    padding: 60px 7%;
+  }
+
+  .detail-hero {
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detail-icon {
+    width: 85px;
+    height: 85px;
+    font-size: 45px;
+  }
+
+  .detail-hero h1 {
+    font-size: 65px;
+  }
+
+  .exhibit {
+    grid-template-columns: 30px 1fr 20px;
+    gap: 10px;
+  }
+
+  .exhibit h3 {
+    font-size: 23px;
+  }
+
+  .quiz-banner {
+    margin: 50px 6%;
+    padding: 65px 20px;
+  }
+
+  .quiz-page {
+    padding: 70px 15px;
+  }
+
+  .quiz-card,
+  .result-card {
+    padding: 25px 18px;
+  }
+
+  .quiz-card h2 {
+    font-size: 29px;
+  }
+
+  .result-card h2 {
+    font-size: 40px;
+  }
+
+  .footer {
+    padding: 50px 6% 25px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+}
+
+/* ==============================
+   REDUCED MOTION ACCESSIBILITY
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* CERTIFICATE FEATURE */
+
+
+/* =================================
+   LUXURY BRAINROT CERTIFICATE
+================================= */
+
+.certificate-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.97);
+  overflow-y: auto;
+  padding: 35px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.certificate {
+  width: min(900px, 100%);
+  min-height: 620px;
+  padding: 65px 75px;
+  position: relative;
+  background:
+    radial-gradient(ellipse at center, #19160f 0%, #0b0b09 75%);
+  border: 3px solid #c6a45c;
+  outline: 1px solid #8c7545;
+  outline-offset: -13px;
+  box-shadow:
+    0 0 0 8px #090909,
+    0 0 0 9px #8c7545,
+    0 25px 80px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #eee8dc;
+}
+
+.certificate::before,
+.certificate::after {
+  content: "✦";
+  position: absolute;
+  color: #c6a45c;
+  font-size: 28px;
+}
+
+.certificate::before {
+  top: 28px;
+  left: 30px;
+}
+
+.certificate::after {
+  bottom: 28px;
+  right: 30px;
+}
+
+.certificate-top {
+  font-size: 13px;
+  letter-spacing: 7px;
+  color: #d8b66c;
+  font-weight: 600;
+}
+
+.certificate-seal {
+  width: 85px;
+  height: 85px;
+  border: 2px solid #c6a45c;
+  outline: 1px solid #8c7545;
+  outline-offset: 5px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 35px auto;
+  color: #e3c783;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  box-shadow: inset 0 0 20px rgba(198, 164, 92, 0.12);
+}
+
+.certificate-label {
+  font-size: 11px;
+  letter-spacing: 6px;
+  color: #c6a45c;
+  margin-bottom: 8px;
+}
+
+.certificate h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(55px, 9vw, 95px);
+  font-weight: 500;
+  letter-spacing: 5px;
+  color: #e3c783;
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.certificate-description {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #c7c0b2;
+  max-width: 570px;
+  margin: 8px auto;
+}
+
+.certificate h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(35px, 6vw, 55px);
+  font-style: italic;
+  font-weight: 500;
+  color: #fff0c8;
+  border-bottom: 1px solid #c6a45c;
+  padding: 0 40px 10px;
+  margin: 15px auto;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.certificate h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: #d8b66c;
+  margin: 20px 0 35px;
+}
+
+.certificate-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid rgba(198, 164, 92, 0.4);
+  padding-top: 20px;
+  margin-top: 20px;
+  color: #c6a45c;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.certificate-overlay .gold-button {
+  min-width: 260px;
+}
+
+@media (max-width: 650px) {
+  .certificate {
+    min-height: 550px;
+    padding: 55px 25px;
+  }
+
+  .certificate-top {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .certificate-description {
+    font-size: 16px;
+  }
+
+  .certificate-bottom {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+}
+
+/* PDF PRINT */
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 297mm;
+    height: 210mm;
+    background: #0b0b09 !important;
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .certificate-overlay,
+  #brainrot-certificate,
+  #brainrot-certificate * {
+    visibility: visible !important;
+  }
+
+  .certificate-overlay {
+    position: absolute;
+    inset: 0;
+    width: 297mm;
+    height: 210mm;
+    padding: 0;
+    background: #0b0b09 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #brainrot-certificate {
+    position: relative;
+    width: 277mm;
+    height: 190mm;
+    min-height: 0;
+    padding: 18mm;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .certificate-overlay > button {
+    display: none !important;
+  }
+}
